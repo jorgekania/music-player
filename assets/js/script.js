@@ -9,6 +9,8 @@ const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 const currentTimeTxt = document.getElementById('current-time');
+const volumeDown = document.getElementById('volume-down');
+const volumeUP = document.getElementById('volume-up');
 
 // Song titles
 // this array can be assembled with values from the database for example
@@ -103,6 +105,32 @@ function updateProgress(e) {
     currentTimeTxt.innerText = `${timeCurrent} min.`;
 }
 
+//UP Volume
+function upVolume() {
+    if (audio.volume < 1)
+        audio.volume += 0.1;
+}
+
+//Down Volume
+function downVolume() {
+    if (audio.volume > 0)
+        audio.volume -= 0.1;
+}
+
+//Volume keyboard
+function upVolumeKeyboard(e) {
+    let keyboard = e.key;
+    if (keyboard === '+') {
+        if (audio.volume < 1)
+            audio.volume += 0.1;
+    }
+
+    if (keyboard === '-') {
+        if (audio.volume > 0)
+        audio.volume -= 0.1;
+    }
+}
+
 // Set progress bar
 function setProgress(e) {
     const width = this.clientWidth;
@@ -135,3 +163,8 @@ progressContainer.addEventListener('click', setProgress);
 
 // Song ends
 audio.addEventListener('ended', nextSong);
+
+// Volume up volume down
+volumeUP.addEventListener('click', upVolume);
+volumeDown.addEventListener('click', downVolume);
+document.addEventListener('keydown', upVolumeKeyboard);

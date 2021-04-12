@@ -2,7 +2,6 @@
 
 * {
   box-sizing: border-box;
-  color: #292a5c;
 }
 h1{
     color: #fff;
@@ -47,7 +46,6 @@ body {
   background-color: rgba(109, 122, 184, 1);
   border-radius: 50%;
   position: absolute;
-  bottom: 100%;
   left: 50%;
   width: 20px;
   height: 20px;
@@ -82,7 +80,7 @@ body {
 }
 
 .navigation {
-  display: flex;
+  margin: 0 0 0 30px;
   align-items: center;
   justify-content: center;
   z-index: 1;
@@ -134,7 +132,7 @@ body {
   background: #fff;
   border-radius: 5px;
   cursor: pointer;
-  margin: 10px 0;
+  margin: 10px 0 0;
   height: 10px;
   width: 100%;
 }
@@ -145,6 +143,23 @@ body {
   height: 100%;
   width: 0%;
   transition: width 0.1s linear;
+}
+
+.volume{
+    width: 100px;
+    padding: 2px 0;
+    cursor: pointer;
+    margin: 0 auto;
+}
+.volume .volume-down, .volume .volume-up{
+    width: 24px;
+    color: #5d5ea0;
+}
+.volume .volume-down{
+    float: left;
+}
+.volume .volume-up{
+    float: right;
 }
 
 #current-time{
